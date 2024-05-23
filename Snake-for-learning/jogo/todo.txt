@@ -1,0 +1,8 @@
+rat limits
+window size
+* menus
+* make it work on windows
+* read highscores from scores.txt
+save highscores to scores.txt (still bugged)
+
+fazer as fases de forma que apareça um texto aleatório explicativo, e as proximas fases apareçam perguntas relacionadas

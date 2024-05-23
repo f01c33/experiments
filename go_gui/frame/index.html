@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<body>
+    <form id="header" style="width:99.5%" onsubmit="enter(event)">
+        <input type="text" id="stuff" style="width:100%">
+    </form>
+    <iframe src="google.com" id="browser" frameBorder="0" style="width:100%;height:95vh"></iframe>
+
+    <script>
+        "use strict";
+        let stuff = document.querySelector("#stuff");
+        stuff.addEventListener("onkeydown",(el,ev)=>{
+            ev.preventDefault();
+        });
+        let form = document.querySelector("#header");
+        form.addEventListener("submit",(el,ev)=>{
+            ev.preventDefault();
+        });
+        let browser = document.querySelector("#browser");
+        function enter(ev){
+            // document.location.href = stuff.value;
+            browser.src = stuff.value;
+            ev.preventDefault();
+        }
+    </script>
+</body>

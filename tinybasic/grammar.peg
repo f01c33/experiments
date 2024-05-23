@@ -1,0 +1,65 @@
+package main
+
+#import <import name>
+
+type Parser Peg {
+}
+
+program <- statement* !.
+
+statement <- declaration  / assignment_stmt / if_stmt / while_stmt / for_stmt / read_stmt / write_stmt
+
+assignment_stmt <- identifier sp "=" expression sp ";"
+
+declaration <- "var" identifier ":" type ";"
+
+type <- "int" / "float" / "rune" / "string" / '[' expression ']' type  / '(' expression ':' expression ')' type
+
+if_stmt <- "if" expression "then"  statement* "end"  /  "if" expression "then"  statement* "else"  statement* "end"
+
+while_stmt <- "while" expression "do"  statement* "end"
+
+for_stmt <- "for" identifier ":=" expression "to" expression "do"  statement* "end"
+
+read_stmt <- "read" expression ";"
+
+write_stmt <- "write" expression ";"
+
+expression <- primary  / unop expression / e
+
+primary <- identifier / identifier '[' expression ']' / integerLiteral / floatLiteral / stringLiteral / runeLiteral / '(' expression ')'
+
+identifier <- [a-zA-Z]+[a-zA-Z0-9]*
+
+integerLiteral <- [0-9]+
+
+floatLiteral <- [0-9]+"."[0-9]+
+
+stringLiteral <- '"'.*'"'
+
+runeLiteral <- "'"."'"
+
+unop <- not / '+' / '-'
+
+not <- '!'
+
+binop <- "and" / "or" / "=" / "!=" / "<" / "<=" / ">="
+
+e <- sp e0 
+e0 <- e1 ( binop e1 )*
+e1 <- e2 ( add e2 minus e2 )*
+e2 <- e3 ( multiply e3 divide e3 modulus e3 )*
+e3 <- e4 ( exponentiation e4 )*
+e4 <- minus value / value
+value <- number / sub
+number <- < [0-9]+ > sp
+sub <- open e1 close
+add <- '+' sp
+minus <- '-' sp
+multiply <- '*' sp
+divide <- '/' sp
+modulus <- '%' sp
+exponentiation <- '^' sp
+open <- '(' sp
+close <- ')' sp
+sp <- ( ' ' / '/t' )*

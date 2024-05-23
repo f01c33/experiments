@@ -1,0 +1,6 @@
+github.com/mattn/go-sqlite3 v1.13.0 h1:LnJI81JidiW9r7pS/hXe6cFeO5EXNq7KbfvoJLRI69c=
+github.com/mattn/go-sqlite3 v2.0.3+incompatible h1:gXHsfypPkaMZrKbD5209QV9jbUTJKjyR5WD3HYQSd+U=
+github.com/mattn/go-sqlite3 v2.0.3+incompatible/go.mod h1:FPy6KqzDD04eiIsT53CuJW3U88zkxoIYsOqkbpncsNc=
+github.com/robotn/gohook v0.0.0-20200411172114-146f7aeeb5e8 h1:/AyyifnuUYFcktEfpv4yCUQf6vaLglTILQbiIZI5vcU=
+github.com/robotn/gohook v0.0.0-20200411172114-146f7aeeb5e8/go.mod h1:VUHyXb+4yA0DJQs+jaC2jWs+J7s6StlztBgwDkcEZT4=
+github.com/vcaesar/tt v0.0.0-20200219144246-a190abe69d64/go.mod h1:GHPxQYhn+7OgKakRusH7KJ0M5MhywoeLb8Fcffs/Gtg=

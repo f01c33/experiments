@@ -1,0 +1,5 @@
+host: 0.0.0.0:8080
+db: ./db.sqlite
+proxies:
+  - 127.0.0.1
+debug: true
